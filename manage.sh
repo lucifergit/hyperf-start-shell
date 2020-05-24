@@ -49,9 +49,8 @@ startdev(){
 		echo -e  "依赖https://github.com/ha-ni-cc/hyperf-watch 下载单文件watch到根目录"
 		exit 1
 	fi
-  echo "start $MASTERAPP service dev..."
+  	echo "start $MASTERAPP service dev..."
 	nohup php watch -c > $SERVER/runtime/log.out 2>&1 &
-	tail -f $SERVER/runtime/log.out
 }
 
 restart()
@@ -65,9 +64,9 @@ status()
 {
     PID=`ps -ef |grep $MASTERAPP|grep -v grep|wc -l`
     if [ $PID != 0 ];then
-        echo "$AppName is running..."
+        echo "$APPNAME is running..."
     else
-        echo "$AppName is not running..."
+        echo "$APPNAME is not running..."
     fi
 }
 
